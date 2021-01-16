@@ -12,7 +12,7 @@ import {
 const initialState = {
   token: localStorage.getItem('token'),
   isAuthenticated: null,
-  loading: false,
+  loading: true,
   user: null,
   error: null,
 };
@@ -20,6 +20,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case USER_LOADED:
+      console.log('From authReducer, Logged in successfully');
       return {
         ...state,
         isAuthenticated: true,

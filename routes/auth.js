@@ -11,6 +11,7 @@ const User = require('../models/User');
 // @desc        Get logged in user
 // @access      Private
 router.get('/', auth, async (req, res) => {
+  console.log('This is from auth.js in Route', req.user.id);
   try {
     // select('-password') prevents from returning hashed password
     const user = await User.findById(req.user.id).select('-password');
