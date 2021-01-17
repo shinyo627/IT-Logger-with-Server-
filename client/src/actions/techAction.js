@@ -12,7 +12,7 @@ export const getTechs = () => async (dispatch) => {
   try {
     setLoading();
 
-    const res = await axios.get('/techs');
+    const res = await axios.get('api/techs');
 
     dispatch({
       type: GET_TECHS,
@@ -36,7 +36,7 @@ export const addTech = (tech) => async (dispatch) => {
         'Content-Type': 'application/json',
       },
     };
-    const res = await axios.post('/techs', tech, config);
+    const res = await axios.post('api/techs', tech, config);
 
     dispatch({
       type: ADD_TECH,
@@ -55,7 +55,7 @@ export const deleteTech = (id) => async (dispatch) => {
   try {
     setLoading();
 
-    await axios.delete(`/techs/${id}`);
+    await axios.delete(`api/techs/${id}`);
 
     dispatch({
       type: DELETE_TECH,

@@ -1,7 +1,6 @@
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import AuthContext from '../../context/auth/authContext';
 
 // PrivateRoute takes in component and spreading everything else that would be passed in as props
 const PrivateRoute = ({
@@ -9,9 +8,6 @@ const PrivateRoute = ({
   component: Component,
   ...rest
 }) => {
-  //   const authContext = useContext(AuthContext);
-  //   const { isAuthenticated, loading } = authContext;
-
   return (
     <Route
       {...rest}

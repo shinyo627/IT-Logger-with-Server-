@@ -32,7 +32,7 @@ export const getLogs = () => async (dispatch) => {
   try {
     setLoading();
 
-    const res = await axios.get('/logs');
+    const res = await axios.get('api/logs');
 
     dispatch({
       type: GET_LOGS,
@@ -56,7 +56,7 @@ export const addLog = (log) => async (dispatch) => {
         'Content-Type': 'application/json',
       },
     };
-    const res = await axios.post('/logs', log, config);
+    const res = await axios.post('api/logs', log, config);
 
     dispatch({
       type: ADD_LOG,
@@ -80,7 +80,7 @@ export const updateLog = (log) => async (dispatch) => {
         'Content-Type': 'application/json',
       },
     };
-    const res = await axios.put(`/logs/${log.id}`, log, config);
+    const res = await axios.put(`api/logs/${log.id}`, log, config);
 
     dispatch({
       type: UPDATE_LOG,
@@ -95,12 +95,12 @@ export const updateLog = (log) => async (dispatch) => {
 };
 
 // Delete log from server
-export const deleteLog = (id) => async (dispatch) => {
+export const deleteLog = (_id) => async (dispatch) => {
   try {
     setLoading();
 
-    await axios.delete(`/logs/${id}`);
-    dispatch({ type: DELETE_LOG, payload: id });
+    await axios.delete(`api/logs/${_id}`);
+    dispatch({ type: DELETE_LOG, payload: _id });
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
@@ -114,7 +114,7 @@ export const searchLogs = (searchKeyword) => async (dispatch) => {
   try {
     setLoading();
 
-    const res = await axios.get(`/logs?q=${searchKeyword}`);
+    const res = await axios.get(`api/logs/search?q=${searchKeyword}`);
 
     dispatch({
       type: SEARCH_LOGS,

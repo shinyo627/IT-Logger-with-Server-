@@ -11,7 +11,6 @@ const LogSchema = mongoose.Schema({
   },
   attention: {
     type: Boolean,
-    required: true,
   },
   tech: {
     type: String,

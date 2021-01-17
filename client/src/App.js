@@ -1,7 +1,5 @@
 import { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import 'materialize-css/dist/css/materialize.min.css';
-import M from 'materialize-css/dist/js/materialize.min.js';
 
 import Navbar from './components/layouts/Navbar';
 import Home from './components/pages/Home';
@@ -16,16 +14,12 @@ import setAuthToken from './utils/setAuthToken';
 
 import './App.css';
 
-// if (localStorage.token) {
-//   setAuthToken(localStorage.token);
-// }
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
 function App() {
   // useEffect instead of addEventListener to init materialize since useEffect runs automatic
-  useEffect(() => {
-    // Init Materialize JS so I can use modals
-    M.AutoInit();
-  });
 
   return (
     <Provider store={store}>

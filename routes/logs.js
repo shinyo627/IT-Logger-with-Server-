@@ -25,6 +25,27 @@ router.get('/', auth, async (req, res) => {
   }
 });
 
+// @route       GET api/logs/search
+// @desc        Search logs
+// @access      Private
+router.get('/search?', auth, async (req, res) => {
+  const regexp = new RegExp('^' + req.query.q.toLowerCase(), 'i');
+
+  try {
+    // message, tech name, date, attention, id
+    const logs = await Log.find({
+      $or: [{ message: { $regex: regexp } }, { tech: { $regex: regexp } }],
+    }).sort({
+      date: -1,
+    });
+    console.log(logs);
+    res.json(logs);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
 // @route       POST api/logs
 // @desc        Add a log
 // @access      Private
