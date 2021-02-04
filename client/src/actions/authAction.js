@@ -13,7 +13,6 @@ import setAuthToken from '../utils/setAuthToken';
 
 // Load User
 export const loadUser = () => async (dispatch) => {
-  console.log('This is loadUser from authAction');
   // Setting token into global header once user's logged in
   // after setAuthToken I don't need each users to send token to access every private pages
   if (localStorage.token) {
@@ -22,7 +21,6 @@ export const loadUser = () => async (dispatch) => {
   try {
     const res = await axios.get('/api/auth');
 
-    console.log('loadUser from authAction', res.data);
     dispatch({
       type: USER_LOADED,
       // Response is user data
@@ -44,7 +42,7 @@ export const register = (formData) => async (dispatch) => {
     },
   };
 
-  console.log('Authaction, register', formData);
+  // console.log('Authaction, register', formData);
 
   try {
     const res = await axios.post('/api/users', formData, config);
@@ -67,7 +65,7 @@ export const register = (formData) => async (dispatch) => {
 
 // Login User
 export const login = (formData) => async (dispatch) => {
-  console.log('login from AuthAction');
+  // console.log('login from AuthAction');
   const config = {
     headers: {
       'Content-Type': 'application/json',

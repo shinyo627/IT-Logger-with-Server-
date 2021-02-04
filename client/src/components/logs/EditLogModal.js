@@ -24,7 +24,7 @@ const EditLogModal = ({ log: { current }, clearCurrent, updateLog }) => {
     if (message === '' || tech === '') {
       M.toast({ html: 'Please enter a message and tech' });
     } else {
-      console.log('This is from EditLogModal', message, tech, attention);
+      // console.log('This is from EditLogModal', message, tech, attention);
       const incomingLog = {
         id: current._id,
         message,

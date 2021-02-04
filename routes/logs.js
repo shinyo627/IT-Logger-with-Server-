@@ -38,7 +38,6 @@ router.get('/search?', auth, async (req, res) => {
     }).sort({
       date: -1,
     });
-    console.log(logs);
     res.json(logs);
   } catch (err) {
     console.error(err.message);
