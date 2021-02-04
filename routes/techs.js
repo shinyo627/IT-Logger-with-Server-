@@ -72,11 +72,6 @@ router.delete('/:id', auth, async (req, res) => {
       return res.status(404).json({ msg: 'Technician not found' });
     }
 
-    // Make sure user owns tech
-    // if (tech.user.toString() != req.user.id) {
-    //   return res.status(404).json({ msg: 'Not Authorized' });
-    // }
-
     await Tech.findByIdAndRemove(req.params.id);
 
     // Returning updated tech

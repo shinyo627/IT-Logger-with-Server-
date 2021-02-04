@@ -43,6 +43,7 @@ export default (state = initialState, action) => {
         logs: state.logs.map((log) =>
           log._id === action.payload._id ? action.payload : log
         ),
+        loading: false,
       };
     case SEARCH_LOGS:
       return {

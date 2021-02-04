@@ -25,7 +25,7 @@ const EditLogModal = ({ log: { current }, clearCurrent, updateLog }) => {
       M.toast({ html: 'Please enter a message and tech' });
     } else {
       // console.log('This is from EditLogModal', message, tech, attention);
-      const incomingLog = {
+      const editedLog = {
         id: current._id,
         message,
         attention,
@@ -33,7 +33,7 @@ const EditLogModal = ({ log: { current }, clearCurrent, updateLog }) => {
         date: new Date(),
       };
 
-      updateLog(incomingLog);
+      updateLog(editedLog);
       M.toast({ html: `Log updated by ${tech}` });
       //   Clear Fields
       clearCurrent();
@@ -85,7 +85,10 @@ const EditLogModal = ({ log: { current }, clearCurrent, updateLog }) => {
                   className='filled-in'
                   checked={attention}
                   value={attention}
-                  onChange={(e) => setAttention(!attention)}
+                  onChange={(e) => {
+                    setAttention(!attention);
+                    console.log(attention);
+                  }}
                 />
                 <span>Needs Attention</span>
               </label>

@@ -92,25 +92,24 @@ router.post(
 router.put('/:id', auth, async (req, res) => {
   const { message, attention, tech, date } = req.body;
 
+  console.log('update log api attention?', attention);
   // Build log object
   const logFields = {};
   if (message) logFields.message = message;
-  if (attention) logFields.attention = attention;
+  if (typeof attention === 'boolean') logFields.attention = attention;
   if (tech) logFields.tech = tech;
   if (date) logFields.date = date;
-
   try {
     // req.params.id is individual log id from mongoDB
     let log = await Log.findById(req.params.id);
-
     if (!log) {
       return res.status(404).json({ msg: 'Log not found' });
     }
 
-    // Make user owns log
-    // if (log.user.toString() != req.user.id) {
-    //   return res.status(404).json({ msg: 'Not Authorized' });
-    // }
+    // Make sure user owns log
+    if (log.user.toString() != req.user.id) {
+      return res.status(404).json({ msg: 'Not Authorized' });
+    }
 
     log = await Log.findByIdAndUpdate(
       req.params.id,

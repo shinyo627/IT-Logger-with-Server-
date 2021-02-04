@@ -14,7 +14,7 @@ const LogItem = ({ log, deleteLog, setCurrent }) => {
   };
 
   return (
-    <li className='collection-item'>
+    <li key={log.id} className='collection-item'>
       {/* href can open up a modal to edit the log */}
       <a
         href='#edit-log-modal'
