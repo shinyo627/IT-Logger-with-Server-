@@ -1,4 +1,5 @@
 ======= IT-Logger-with-Server ========
+
 Simple app for technicians to share logs for work in private company.
 
 Technologies:
