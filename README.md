@@ -10,3 +10,10 @@ Technologies:
 4) Font awesome, Materialize-css and moment for UI.
 
 Link ---> https://afternoon-fjord-52085.herokuapp.com/
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+In the project directory, you can run:
+
+### `npm run dev`
+
+Runs the app in the development mode.<br />
