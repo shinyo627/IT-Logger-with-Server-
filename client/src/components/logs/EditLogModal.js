@@ -70,7 +70,7 @@ const EditLogModal = ({ log: { current }, clearCurrent, updateLog }) => {
               <option value='' disabled>
                 Select Technicians
               </option>
-              {/* Somehow default slects are not the same on edit */}
+              {/* Somehow default selects are not the same on edit */}
               <TechSelectOptions />
             </select>
           </div>

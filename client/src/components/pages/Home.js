@@ -15,9 +15,6 @@ import TechListModal from '../techs/TechListModal';
 import { loadUser } from '../../actions/authAction';
 
 const Home = ({ loadUser }) => {
-  // const authContext = useContext(AuthContext);
-  // const { loadUser } = authContext;
-
   useEffect(() => {
     loadUser();
     // Init Materialize JS so I can use modals

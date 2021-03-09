@@ -6,12 +6,8 @@ import PropTypes from 'prop-types';
 import { logout } from '../../actions/authAction';
 
 const Navbar = ({ title, icon, auth: { isAuthenticated, user }, logout }) => {
-  //   const contactContext = useContext(ContactContext);
-  //   const { clearContacts } = contactContext;
-
   const onLogout = () => {
     logout();
-    // clearContacts();
   };
 
   const authLinks = (

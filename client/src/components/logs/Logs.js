@@ -8,7 +8,6 @@ import { getLogs } from '../../actions/logAction';
 import LogItem from './LogItem';
 import Preloader from '../layouts/Preloader';
 
-// action such as getLogs comes within props so needs to be destructured
 const Logs = ({ log: { logs, loading }, getLogs }) => {
   useEffect(() => {
     getLogs();
@@ -29,7 +28,7 @@ const Logs = ({ log: { logs, loading }, getLogs }) => {
       {!loading && logs.length === 0 ? (
         <p className='center'>No logs to show...</p>
       ) : (
-        logs.map((log) => <LogItem key={log.id} log={log} />)
+        logs.map((log) => <LogItem key={log._id} log={log} />)
       )}
     </ul>
   );

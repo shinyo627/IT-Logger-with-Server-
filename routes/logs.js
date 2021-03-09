@@ -138,7 +138,7 @@ router.delete('/:id', auth, async (req, res) => {
       return res.status(404).json({ msg: 'Log not found' });
     }
 
-    // Make user owns log
+    // Make sure user owns log
     // if (log.user.toString() != req.user.id) {
     //   return res.status(404).json({ msg: 'Not Authorized' });
     // }
