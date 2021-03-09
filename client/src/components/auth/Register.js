@@ -21,7 +21,6 @@ const Register = ({
     if (error === 'User already exists') {
       M.toast({ html: `${error}` });
       clearErrors();
-      // why we don't want setAlert and clearErros for dependencies?
     }
     // eslint-disable-next-line
   }, [error, isAuthenticated, history]);

@@ -21,7 +21,6 @@ const Login = ({
     if (error === 'Invalid Credentials') {
       M.toast({ html: `${error}` });
       clearErrors();
-      // why we don't want setAlert and clearErrors for dependencies?
     }
     // eslint-disable-next-line
   }, [error, isAuthenticated, history]);

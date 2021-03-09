@@ -11,8 +11,8 @@ import {
 } from './types';
 import axios from 'axios';
 
-// THIS IS EASIER VERSION TO UNDERSTAND
-// export const getLOGS = () => {
+// THIS IS EASIER VERSION TO UNDERSTAND - First Iteration
+// export const getLogs = () => {
 //   // redux-thunk comes with dispatch and allows us to return a function directly
 //   // getState as param is optional which allows us to get part of state
 //   return async (dispatch) => {
@@ -27,7 +27,7 @@ import axios from 'axios';
 //   };
 // };
 
-// Get logs from server
+// Get logs from server - Second Iteration
 export const getLogs = () => async (dispatch) => {
   try {
     setLoading();
