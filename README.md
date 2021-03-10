@@ -11,9 +11,3 @@ Technologies:
 
 Link ---> https://afternoon-fjord-52085.herokuapp.com/
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-In the project directory, you can run:
-
-### `npm run dev`
-
-Runs the app in the development mode.<br />
